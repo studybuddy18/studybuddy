@@ -40,13 +40,13 @@ $calc_days = abs(strtotime($_GET['out']) - strtotime($_GET['in'])) ;
 			method:'POST',
 			data:$(this).serialize(),
 			success:function(resp){
-				if(resp >0){
+				
 					alert_toast("Data successfully saved",'success')
 					setTimeout(function(){
 					end_load()
 					$('.modal').modal('hide')
 					},1500)
-				}
+				
 			}
 		})
 	})
