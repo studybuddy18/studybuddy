@@ -34,19 +34,19 @@ $calc_days = abs(strtotime($_GET['out']) - strtotime($_GET['in'])) ;
 <script>
 	$('#manage-check').submit(function(e){
 		e.preventDefault();
-		start_load()
+		//start_load()
 		$.ajax({
 			url:'admin/ajax.php?action=save_book',
 			method:'POST',
 			data:$(this).serialize(),
 			success:function(resp){
-				
+				if(resp >0){
 					alert_toast("Data successfully saved",'success')
 					setTimeout(function(){
 					end_load()
 					$('.modal').modal('hide')
-					},150)
-				
+					},1500)
+				}
 			}
 		})
 	})
