@@ -22,7 +22,7 @@ $calc_days = abs(strtotime($_GET['out']) - strtotime($_GET['in'])) ;
 		</div>
 		<div class="form-group">
 			<label for="date_in">Appointment Date</label>
-			<input type="date" name="date_in" id="date_in" class="form-control" value="<?php echo isset($_GET['in']) ? date("Y-m-d",strtotime($_GET['in'])): date("Y-m-d") ?>" required >
+			<input type="date" name="date_in" id="date_in" class="form-control" value="<?php echo isset($_GET['in']) ? date("Y-m-d",strtotime($_GET['in'])): date("Y-m-d") ?>" required readonly >
 		</div>
 		<div class="form-group">
 			<label for="date_in_time">Appointment Time</label>
@@ -34,14 +34,14 @@ $calc_days = abs(strtotime($_GET['out']) - strtotime($_GET['in'])) ;
 <script>
 	$('#manage-check').submit(function(e){
 		e.preventDefault();
-		//start_load()
+		start_load()
 		$.ajax({
 			url:'admin/ajax.php?action=save_book',
 			method:'POST',
 			data:$(this).serialize(),
 			success:function(resp){
 				if(resp >0){
-					alert_toast("Data successfully saved",'success')
+					alert_toast("Data successfully saved",'Success')
 					setTimeout(function(){
 					end_load()
 					$('.modal').modal('hide')
