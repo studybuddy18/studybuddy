@@ -22,7 +22,7 @@ $calc_days = abs(strtotime($_GET['out']) - strtotime($_GET['in'])) ;
 		</div>
 		<div class="form-group">
 			<label for="date_in">Appointment Date</label>
-			<input type="date" name="date_in" id="date_in" class="form-control" value="<?php echo isset($_GET['in']) ? date("Y-m-d",strtotime($_GET['in'])): date("Y-m-d") ?>" required readonly >
+			<input type="date" name="date_in" id="date_in" class="form-control" value="<?php echo isset($_GET['in']) ? date("Y-m-d",strtotime($_GET['in'])): date("Y-m-d") ?>" required>
 		</div>
 		<div class="form-group">
 			<label for="date_in_time">Appointment Time</label>
